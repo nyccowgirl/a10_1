@@ -42,56 +42,94 @@ Fraction::Fraction(int inNum, int inDenom) {
 
 
 
-Fraction Fraction::addedTo(const Fraction &frac) const {
+Fraction operator+(const Fraction &left, const Fraction &right) {
     int sum;
     Fraction temp;
     
-    sum = (numerator * frac.denominator) + (frac.numerator * denominator);
-    temp = Fraction(sum, (denominator * frac.denominator));
+    sum = (left.numerator * right.denominator) + (right.numerator * left.denominator);
+    temp = Fraction(sum, (left.denominator * right.denominator));
     temp.simplify();
     return temp;
 }
 
+//Fraction Fraction::addedTo(const Fraction &frac) const {
+//    int sum;
+//    Fraction temp;
+//
+//    sum = (numerator * frac.denominator) + (frac.numerator * denominator);
+//    temp = Fraction(sum, (denominator * frac.denominator));
+//    temp.simplify();
+//    return temp;
+//}
 
 
 
 
 
-Fraction Fraction::subtract(const Fraction &frac) const {
+
+Fraction operator-(const Fraction &left, const Fraction &right) {
     int diff;
     Fraction temp;
     
-    diff = (numerator * frac.denominator) - (frac.numerator * denominator);
-    temp = Fraction(diff, (denominator * frac.denominator));
+    diff = (left.numerator * right.denominator) - (right.numerator * left.denominator);
+    temp = Fraction(diff, (left.denominator * right.denominator));
     temp.simplify();
     return temp;
 }
 
+//Fraction Fraction::subtract(const Fraction &frac) const {
+//    int diff;
+//    Fraction temp;
+//
+//    diff = (numerator * frac.denominator) - (frac.numerator * denominator);
+//    temp = Fraction(diff, (denominator * frac.denominator));
+//    temp.simplify();
+//    return temp;
+//}
 
 
 
 
 
-Fraction Fraction::multipliedBy(const Fraction &frac) const {
+
+Fraction operator*(const Fraction &left, const Fraction &right) {
     Fraction temp;
     
-    temp = Fraction((numerator * frac.numerator), (denominator * frac.denominator));
+    temp = Fraction((left.numerator * right.numerator),
+                    (left.denominator * right.denominator));
     temp.simplify();
     return temp;
 }
 
+//Fraction Fraction::multipliedBy(const Fraction &frac) const {
+//    Fraction temp;
+//
+//    temp = Fraction((numerator * frac.numerator), (denominator * frac.denominator));
+//    temp.simplify();
+//    return temp;
+//}
 
 
 
 
 
-Fraction Fraction::dividedBy(const Fraction &frac) const {
+
+Fraction operator/(const Fraction &left, const Fraction &right) {
     Fraction temp;
     
-    temp = Fraction((numerator * frac.denominator), (denominator * frac.numerator));
+    temp = Fraction((left.numerator * right.denominator),
+                    (left.denominator * right.numerator));
     temp.simplify();
     return temp;
 }
+
+//Fraction Fraction::dividedBy(const Fraction &frac) const {
+//    Fraction temp;
+//
+//    temp = Fraction((numerator * frac.denominator), (denominator * frac.numerator));
+//    temp.simplify();
+//    return temp;
+//}
 
 
 
@@ -162,8 +200,12 @@ bool operator!=(const Fraction &left, const Fraction &right) {
 ostream &operator<<(ostream &out, const Fraction &right) {
     if (right.denominator == 1) {
         out << right.numerator;
+    } else if ((right.numerator < 0) && (-right.numerator > right.denominator)) {
+        out << "-" << (-right.numerator / right.denominator) << "+";
+        out << (-right.numerator % right.denominator) << "/" << right.denominator;
     } else if (right.numerator > right.denominator) {
-        out << (right.numerator / right.denominator) << "+" << (right.numerator % right.denominator) << "/" << right.denominator;
+        out << (right.numerator / right.denominator) << "+";
+        out << (right.numerator % right.denominator) << "/" << right.denominator;
     } else {
         out << right.numerator << "/" << right.denominator;
     }

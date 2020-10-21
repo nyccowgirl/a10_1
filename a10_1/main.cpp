@@ -35,7 +35,7 @@ int main()
 {
     BasicTest();
     RelationTest();
-//    BinaryMathTest();
+    BinaryMathTest();
 //    MathAssignTest();
 }
 
@@ -137,41 +137,41 @@ void RelationTest()
 
 
 
-//
-//
-//void BinaryMathTest()
-//{
-//    cout << "\n----- Testing binary arithmetic between Fractions\n";
-//
-//    const Fraction fr[] = {Fraction(1, 6), Fraction(1,3),
-//                           Fraction(-2,3), Fraction(5), Fraction(-4,3)};
-//
-//    for (int i = 0; i < 4; i++) {
-//          cout << fr[i] << " + " << fr[i+1] << " = " << fr[i] + fr[i+1] << endl;
-//          cout << fr[i] << " - " << fr[i+1] << " = " << fr[i] - fr[i+1] << endl;
-//          cout << fr[i] << " * " << fr[i+1] << " = " << fr[i] * fr[i+1] << endl;
-//          cout << fr[i] << " / " << fr[i+1] << " = " << fr[i] / fr[i+1] << endl;
-//    }
-//
-//    cout << "\n----- Testing arithmetic between Fractions and integers\n";
-//    Fraction f(-1, 2);
-//    int num = 4;
-//    cout << f << " + " << num << " = " << f + num << endl;
-//    cout << f << " - " << num << " = " << f - num << endl;
-//    cout << f << " * " << num << " = " << f * num << endl;
-//    cout << f << " / " << num << " = " << f / num << endl;
-//
-//    Fraction g(-1, 2);
-//    num = 3;
-//    cout << num << " + " << g << " = " << num + g << endl;
-//    cout << num << " - " << g << " = " << num - g << endl;
-//    cout << num << " * " << g << " = " << num * g << endl;
-//    cout << num << " / " << g << " = " << num / g << endl;
-//}
-//
-//
-//
-//
+
+
+void BinaryMathTest()
+{
+    cout << "\n----- Testing binary arithmetic between Fractions\n";
+
+    const Fraction fr[] = {Fraction(1, 6), Fraction(1,3),
+                           Fraction(-2,3), Fraction(5), Fraction(-4,3)};
+
+    for (int i = 0; i < 4; i++) {
+          cout << fr[i] << " + " << fr[i+1] << " = " << fr[i] + fr[i+1] << endl;
+          cout << fr[i] << " - " << fr[i+1] << " = " << fr[i] - fr[i+1] << endl;
+          cout << fr[i] << " * " << fr[i+1] << " = " << fr[i] * fr[i+1] << endl;
+          cout << fr[i] << " / " << fr[i+1] << " = " << fr[i] / fr[i+1] << endl;
+    }
+
+    cout << "\n----- Testing arithmetic between Fractions and integers\n";
+    Fraction f(-1, 2);
+    int num = 4;
+    cout << f << " + " << num << " = " << f + num << endl;
+    cout << f << " - " << num << " = " << f - num << endl;
+    cout << f << " * " << num << " = " << f * num << endl;
+    cout << f << " / " << num << " = " << f / num << endl;
+
+    Fraction g(-1, 2);
+    num = 3;
+    cout << num << " + " << g << " = " << num + g << endl;
+    cout << num << " - " << g << " = " << num - g << endl;
+    cout << num << " * " << g << " = " << num * g << endl;
+    cout << num << " / " << g << " = " << num / g << endl;
+}
+
+
+
+
 //
 //
 //void MathAssignTest()
