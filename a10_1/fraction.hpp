@@ -34,49 +34,81 @@ namespace cs_fraction {
         parameter (with default of 1). If inDenom is 0, program is aborted.
  
  friend Fraction operator+(const Fraction &left, const Fraction &right);
-  post: Returns the Fraction determined by adding the calling object (or integer) of the
-        parameter "left" with the calling object (or integer) of the paramenter "right".
+  post: Returns the Fraction determined by adding the Fraction (or integer) of the
+        parameter "left" with the Fraction (or integer) of the paramenter "right".
  
  friend Fraction operator-(const Fraction &left, const Fraction &right);
-  post: Returns the Fraction determined by subtracting the calling object (or integer) of
-        the parameter "right" from the calling object (or integer) of the parameter "left".
+  post: Returns the Fraction determined by subtracting the Fraction (or integer) of
+        the parameter "right" from the Fraction (or integer) of the parameter "left".
  
  friend Fraction operator*(const Fraction &left, const Fraction &right);
-  post: Returns the Fraction determined by multiplying the calling object (or integer) of
-        the parameter "left" by the calling object (or integer) of the parameter "right".
+  post: Returns the Fraction determined by multiplying the Fraction (or integer) of
+        the parameter "left" by the Fraction (or integer) of the parameter "right".
  
  friend Fraction operator/(const Fraction &left, const Fraction &right);
-  post: Returns the Fraction determined by dividing the calling object (or integer) of the
-        parameter "left" by the calling object (or integer) of the parameter "right".
+  post: Returns the Fraction determined by dividing the Fraction (or integer) of the
+        parameter "left" by the Fraction (or integer) of the parameter "right".
  
  friend bool operator<(const Fraction &left, const Fraction &right);
-  post: Returns true if the calling object (or integer) of the parameter "left" is less
-        than the calling object (or integer) of the parameter "right". Otherwise, returns
+  post: Returns true if the Fraction (or integer) of the parameter "left" is less
+        than the Fraction (or integer) of the parameter "right". Otherwise, returns
         false.
  
  friend bool operator<=(const Fraction &left, const Fraction &right);
-  post: Returns true if the calling object (or integer) of the parameter "left" is less
-        than or equal to the calling object (or integer) of the parameter "right".
+  post: Returns true if the Fraction (or integer) of the parameter "left" is less
+        than or equal to the Fraction (or integer) of the parameter "right".
         Otherwise, returns false.
  
  friend bool operator>(const Fraction &left, const Fraction &right);
-  post: Returns true if the calling object (or integer) of the parameter "left" is greater
-        than the calling object (or integer) of the parameter "right". Otherwise, returns
+  post: Returns true if the Fraction (or integer) of the parameter "left" is greater
+        than the Fraction (or integer) of the parameter "right". Otherwise, returns
         false.
  
  friend bool operator>=(const Fraction &left, const Fraction &right);
-  post: Returns true if the calling object (or integer) of the parameter "left" is greater
-        than or equal to the calling object (or integer) of the parameter "right".
+  post: Returns true if the Fraction (or integer) of the parameter "left" is greater
+        than or equal to the Fraction (or integer) of the parameter "right".
         Otherwise, returns false.
  
  friend bool operator==(const Fraction &left, const Fraction &right);
-  post: Returns true if the calling object (or integer) of the parameter "left" is equal to
-        the calling object (or integer) of the parameter "right". Otherwise, returns false.
+  post: Returns true if the Fraction (or integer) of the parameter "left" is equal to
+        the Fraction (or integer) of the parameter "right". Otherwise, returns false.
  
  friend bool operator!=(const Fraction &left, const Fraction &right);
-  post: Returns true if the calling object (or integer) of the parameter "left" is not
-        equal to the calling object (or integer) of the parameter "right". Otherwise,
+  post: Returns true if the Fraction (or integer) of the parameter "left" is not
+        equal to the Fraction (or integer) of the parameter "right". Otherwise,
         returns false.
+ 
+ Fraction operator+=(const Fraction &right);
+  post: Returns the Fraction determined by adding the calling object with the Fraction (or
+        integer) of the parameter "right".
+ 
+ Fraction operator-=(const Fraction &right);
+  post: Returns the Fraction determined by subtracting the calling object with the Fraction
+        (or integer) of the parameter "right".
+ 
+ Fraction operator*=(const Fraction &right);
+  post: Returns the Fraction determined by multiplying the calling object by the Fraction
+        (or integer) of the parameter "right".
+ 
+ Fraction operator/=(const Fraction &right);
+  post: Returns the Fraction determined by dividing the calling object by the Fraction (or
+        integer) of the parameter "right".
+ 
+ Fraction operator++();
+  post: Returns the Fraction determined by incrementing the calling object by 1
+        (pre-increment operator).
+ 
+ Fraction operator++(int);
+  post: Returns the original calling object after incrementing it by 1 (post-increment
+        operator).
+ 
+ Fraction operator--();
+  post: Returns the Fraction determined be decrementing the calling object by 1
+        (pre-decrement operator).
+ 
+ Fraction operator--(int);
+  post: Returns the original calling object after decrementing it by 1 (post-decrement
+        operator).
 
  friend std::ostream &operator<<(std::ostream &out, const Fraction &right);
   post: The calling object has been printed to the console window in the formats of W,
@@ -104,6 +136,14 @@ public:
 //    bool isEqualTo(const Fraction &frac) const;
     friend bool operator!=(const Fraction &left, const Fraction &right);
 //    void print() const;
+    Fraction operator+=(const Fraction &right);
+    Fraction operator-=(const Fraction &right);
+    Fraction operator*=(const Fraction &right);
+    Fraction operator/=(const Fraction &right);
+    Fraction operator++();
+    Fraction operator++(int);
+    Fraction operator--();
+    Fraction operator--(int);
     friend std::ostream &operator<<(std::ostream &out, const Fraction &right);
 
 private:

@@ -193,6 +193,96 @@ bool operator!=(const Fraction &left, const Fraction &right) {
 
 
 
+Fraction Fraction::operator+=(const Fraction &right) {
+    *this = *this + right;
+    return *this;
+}
+
+
+
+
+
+
+Fraction Fraction::operator-=(const Fraction &right) {
+    *this = *this - right;
+    return *this;
+}
+
+
+
+
+
+
+Fraction Fraction::operator*=(const Fraction &right) {
+    *this = *this * right;
+    return *this;
+}
+
+
+
+
+
+
+Fraction Fraction::operator/=(const Fraction &right) {
+    *this = *this / right;
+    return *this;
+}
+    
+
+
+
+
+
+Fraction Fraction::operator++() {
+    *this = *this + 1;
+    return *this;
+}
+
+
+
+
+
+
+Fraction Fraction::operator++(int) {
+    Fraction temp(numerator, denominator);
+    *this = *this + 1;
+    return temp;
+}
+
+
+
+
+
+
+Fraction Fraction::operator--() {
+    *this = *this - 1;
+    return *this;
+}
+
+
+
+
+
+
+Fraction Fraction::operator--(int) {
+    Fraction temp(numerator, denominator);
+    *this = *this - 1;
+    return temp;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //void Fraction::print() const {
 //    cout << numerator << "/" << denominator;
 //}

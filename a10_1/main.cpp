@@ -36,7 +36,7 @@ int main()
     BasicTest();
     RelationTest();
     BinaryMathTest();
-//    MathAssignTest();
+    MathAssignTest();
 }
 
 
@@ -172,47 +172,47 @@ void BinaryMathTest()
 
 
 
-//
-//
-//void MathAssignTest()
-//{
-//    cout << "\n----- Testing shorthand arithmetic assignment on Fractions\n";
-//
-//    Fraction fr[] = {Fraction(1, 6), Fraction(4),
-//                     Fraction(-1,2), Fraction(5)};
-//
-//    for (int i = 0; i < 3; i++) {
-//          cout << fr[i] << " += " << fr[i+1] << " = ";
-//          cout << (fr[i] += fr[i+1]) << endl;
-//          cout << fr[i] << " -= " << fr[i+1] << " = ";
-//          cout << (fr[i] -= fr[i+1]) << endl;
-//          cout << fr[i] << " *= " << fr[i+1] << " = ";
-//          cout << (fr[i] *= fr[i+1]) << endl;
-//          cout << fr[i] << " /= " << fr[i+1] << " = ";
-//          cout << (fr[i] /= fr[i+1]) << endl;
-//    }
-//
-//    cout << "\n----- Testing shorthand arithmetic assignment using integers\n";
-//    Fraction f(-1, 3);
-//    int num = 3;
-//    cout << f << " += " << num << " = ";
-//    cout << (f += num) << endl;
-//    cout << f << " -= " << num << " = ";
-//    cout << (f -= num) << endl;
-//    cout << f << " *= " << num << " = ";
-//    cout << (f *= num) << endl;
-//    cout << f << " /= " << num << " = ";
-//    cout << (f /= num) << endl;
-//
-//    cout << "\n----- Testing increment/decrement prefix and postfix\n";
-//    Fraction g(-1, 3);
-//    cout << "Now g = " << g << endl;
-//    cout << "g++ = " << g++ << endl;
-//    cout << "Now g = " << g << endl;
-//    cout << "++g = " << ++g << endl;
-//    cout << "Now g = " << g << endl;
-//    cout << "g-- = " << g-- << endl;
-//    cout << "Now g = " << g << endl;
-//    cout << "--g = " << --g << endl;
-//    cout << "Now g = " << g << endl;
-//}
+
+
+void MathAssignTest()
+{
+    cout << "\n----- Testing shorthand arithmetic assignment on Fractions\n";
+
+    Fraction fr[] = {Fraction(1, 6), Fraction(4),
+                     Fraction(-1,2), Fraction(5)};
+
+    for (int i = 0; i < 3; i++) {
+          cout << fr[i] << " += " << fr[i+1] << " = ";
+          cout << (fr[i] += fr[i+1]) << endl;
+          cout << fr[i] << " -= " << fr[i+1] << " = ";
+          cout << (fr[i] -= fr[i+1]) << endl;
+          cout << fr[i] << " *= " << fr[i+1] << " = ";
+          cout << (fr[i] *= fr[i+1]) << endl;
+          cout << fr[i] << " /= " << fr[i+1] << " = ";
+          cout << (fr[i] /= fr[i+1]) << endl;
+    }
+
+    cout << "\n----- Testing shorthand arithmetic assignment using integers\n";
+    Fraction f(-1, 3);
+    int num = 3;
+    cout << f << " += " << num << " = ";
+    cout << (f += num) << endl;
+    cout << f << " -= " << num << " = ";
+    cout << (f -= num) << endl;
+    cout << f << " *= " << num << " = ";
+    cout << (f *= num) << endl;
+    cout << f << " /= " << num << " = ";
+    cout << (f /= num) << endl;
+
+    cout << "\n----- Testing increment/decrement prefix and postfix\n";
+    Fraction g(-1, 3);
+    cout << "Now g = " << g << endl;
+    cout << "g++ = " << g++ << endl;
+    cout << "Now g = " << g << endl;
+    cout << "++g = " << ++g << endl;
+    cout << "Now g = " << g << endl;
+    cout << "g-- = " << g-- << endl;
+    cout << "Now g = " << g << endl;
+    cout << "--g = " << --g << endl;
+    cout << "Now g = " << g << endl;
+}
