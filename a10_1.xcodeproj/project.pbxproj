@@ -95,7 +95,7 @@
 		7AC455BE253FE912003E7FAE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					7AC455C5253FE912003E7FAE = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -247,6 +247,7 @@
 		7AC455CE253FE912003E7FAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -255,6 +256,7 @@
 		7AC455CF253FE912003E7FAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

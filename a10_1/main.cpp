@@ -60,30 +60,31 @@ void BasicTest()
     }
         
         
-//    cout << "\n----- Now reading Fractions from file\n";
-//    ifstream in("Fraction.txt");
-//    assert(in);
-//    while (!eof(in)) {
-//        Fraction f;
-//        if (in.peek() == '#') {
-//            in.ignore(128, '\n');                       //skip this line, it's a comment
-//        } else {
-//            in >> f;
-//            cout << "Read Fraction = " << f << endl;
-//        }
-//    }
+    cout << "\n----- Now reading Fractions from file\n";
+    ifstream in("Fraction.txt");
+
+    assert(in);
+    while (!eof(in)) {
+        Fraction f;
+        if (in.peek() == '#') {
+            in.ignore(128, '\n');                       //skip this line, it's a comment
+        } else {
+            in >> f;
+            cout << "Read Fraction = " << f << endl;
+        }
+    }
 }
 
 
-//bool eof(ifstream& in)
-//{
-//    char ch;
-//    in >> ch;
-//    in.putback(ch);
-//    return !in;
-//}
-//
-//
+bool eof(ifstream& in)
+{
+    char ch;
+    in >> ch;
+    in.putback(ch);
+    return !in;
+}
+
+
 
 
 

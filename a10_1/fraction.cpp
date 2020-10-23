@@ -16,6 +16,7 @@
 */
 
 #include <iostream>
+//#include <string>
 #include <cassert>
 #include "fraction.hpp"
 using namespace std;
@@ -234,7 +235,8 @@ Fraction Fraction::operator/=(const Fraction &right) {
 
 
 Fraction Fraction::operator++() {
-    *this = *this + 1;
+//    *this = *this + 1;
+    *this += 1;
     return *this;
 }
 
@@ -244,8 +246,9 @@ Fraction Fraction::operator++() {
 
 
 Fraction Fraction::operator++(int) {
-    Fraction temp(numerator, denominator);
-    *this = *this + 1;
+    Fraction temp(*this);
+//    *this = *this + 1;
+    *this += 1;
     return temp;
 }
 
@@ -255,7 +258,8 @@ Fraction Fraction::operator++(int) {
 
 
 Fraction Fraction::operator--() {
-    *this = *this - 1;
+//    *this = *this - 1;
+    *this -= 1;
     return *this;
 }
 
@@ -265,8 +269,9 @@ Fraction Fraction::operator--() {
 
 
 Fraction Fraction::operator--(int) {
-    Fraction temp(numerator, denominator);
-    *this = *this - 1;
+    Fraction temp(*this);
+//    *this = *this - 1;
+    *this -= 1;
     return temp;
 }
 
@@ -275,8 +280,44 @@ Fraction Fraction::operator--(int) {
 
 
 
+istream &operator>>(istream &in, Fraction &right) {
+    // TO CODE
+    int temp, whole = 0, num = 0, den = 1;
+    bool frac = false;
+    
+//    cout << "test" << endl;
+    
+    do {
+        in >> temp;
+//        cout << temp << endl;
+//        if (in.peek() == '+') {
 
+        if ((in.peek() == '+') || ((in.peek() == '\n') && !(frac))) {
+            whole = temp;
+            if (in.peek() == '+') {
+                in.ignore();
+            }
+        } else if (in.peek() == '/') {
+            num = temp;
+            frac = true;
+            in.ignore();
+        } else {
+            den = temp;
+        }
+//        cout << whole << '+' << num << '/' << den << endl;
+//        in.ignore();
+    } while (in.peek() != '\n');
 
+    if (whole < 0) {
+        right.numerator = (whole * den) - num;
+    } else {
+        right.numerator = (whole * den) + num;
+    }
+    right.denominator = den;
+//    cout << right.numerator << "/" << right.denominator << endl;
+    right.simplify();
+    return in;
+}
 
 
 
@@ -290,9 +331,9 @@ Fraction Fraction::operator--(int) {
 ostream &operator<<(ostream &out, const Fraction &right) {
     if (right.denominator == 1) {
         out << right.numerator;
-    } else if ((right.numerator < 0) && (-right.numerator > right.denominator)) {
-        out << "-" << (-right.numerator / right.denominator) << "+";
-        out << (-right.numerator % right.denominator) << "/" << right.denominator;
+    } else if ((right.numerator < 0) && (abs(right.numerator) > right.denominator)) {
+        out << "-" << (abs(right.numerator) / right.denominator) << "+";
+        out << (abs(right.numerator) % right.denominator) << "/" << right.denominator;
     } else if (right.numerator > right.denominator) {
         out << (right.numerator / right.denominator) << "+";
         out << (right.numerator % right.denominator) << "/" << right.denominator;
