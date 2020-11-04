@@ -119,36 +119,36 @@ namespace cs_fraction {
          
 */
 
-class Fraction
-{
-public:
-    Fraction(int inNum = 0, int inDenom = 1);
-    friend Fraction operator+(const Fraction &left, const Fraction &right);
-    friend Fraction operator-(const Fraction &left, const Fraction &right);
-    friend Fraction operator*(const Fraction &left, const Fraction &right);
-    friend Fraction operator/(const Fraction &left, const Fraction &right);
-    friend bool operator<(const Fraction &left, const Fraction &right);
-    friend bool operator<=(const Fraction &left, const Fraction &right);
-    friend bool operator>(const Fraction &left, const Fraction &right);
-    friend bool operator>=(const Fraction &left, const Fraction &right);
-    friend bool operator==(const Fraction &left, const Fraction &right);
-    friend bool operator!=(const Fraction &left, const Fraction &right);
-    Fraction operator+=(const Fraction &right);
-    Fraction operator-=(const Fraction &right);
-    Fraction operator*=(const Fraction &right);
-    Fraction operator/=(const Fraction &right);
-    Fraction operator++();
-    Fraction operator++(int);
-    Fraction operator--();
-    Fraction operator--(int);
-    friend std::istream &operator>>(std::istream &in, Fraction &right);
-    friend std::ostream &operator<<(std::ostream &out, const Fraction &right);
+    class Fraction
+    {
+        public:
+            Fraction(int inNum = 0, int inDenom = 1);
+            friend Fraction operator+(const Fraction &left, const Fraction &right);
+            friend Fraction operator-(const Fraction &left, const Fraction &right);
+            friend Fraction operator*(const Fraction &left, const Fraction &right);
+            friend Fraction operator/(const Fraction &left, const Fraction &right);
+            friend bool operator<(const Fraction &left, const Fraction &right);
+            friend bool operator<=(const Fraction &left, const Fraction &right);
+            friend bool operator>(const Fraction &left, const Fraction &right);
+            friend bool operator>=(const Fraction &left, const Fraction &right);
+            friend bool operator==(const Fraction &left, const Fraction &right);
+            friend bool operator!=(const Fraction &left, const Fraction &right);
+            Fraction operator+=(const Fraction &right);
+            Fraction operator-=(const Fraction &right);
+            Fraction operator*=(const Fraction &right);
+            Fraction operator/=(const Fraction &right);
+            Fraction operator++();
+            Fraction operator++(int);
+            Fraction operator--();
+            Fraction operator--(int);
+            friend std::istream &operator>>(std::istream &in, Fraction &right);
+            friend std::ostream &operator<<(std::ostream &out, const Fraction &right);
 
-private:
-    int numerator;
-    int denominator;
-    void simplify();
-};
+        private:
+            int numerator;
+            int denominator;
+            void simplify();
+    };
 }
 
 #endif /* fraction_hpp */
