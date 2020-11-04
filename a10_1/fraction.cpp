@@ -3,7 +3,7 @@
  CS110B
  Dave Harden
  11/3/20
- fraction.hpp
+ fraction.cpp
  
  Assignment 10.1
  
@@ -16,7 +16,6 @@
 */
 
 #include <iostream>
-//#include <string>
 #include <cassert>
 #include "fraction.hpp"
 using namespace std;
@@ -53,16 +52,6 @@ Fraction operator+(const Fraction &left, const Fraction &right) {
     return temp;
 }
 
-//Fraction Fraction::addedTo(const Fraction &frac) const {
-//    int sum;
-//    Fraction temp;
-//
-//    sum = (numerator * frac.denominator) + (frac.numerator * denominator);
-//    temp = Fraction(sum, (denominator * frac.denominator));
-//    temp.simplify();
-//    return temp;
-//}
-
 
 
 
@@ -78,16 +67,6 @@ Fraction operator-(const Fraction &left, const Fraction &right) {
     return temp;
 }
 
-//Fraction Fraction::subtract(const Fraction &frac) const {
-//    int diff;
-//    Fraction temp;
-//
-//    diff = (numerator * frac.denominator) - (frac.numerator * denominator);
-//    temp = Fraction(diff, (denominator * frac.denominator));
-//    temp.simplify();
-//    return temp;
-//}
-
 
 
 
@@ -102,14 +81,6 @@ Fraction operator*(const Fraction &left, const Fraction &right) {
     return temp;
 }
 
-//Fraction Fraction::multipliedBy(const Fraction &frac) const {
-//    Fraction temp;
-//
-//    temp = Fraction((numerator * frac.numerator), (denominator * frac.denominator));
-//    temp.simplify();
-//    return temp;
-//}
-
 
 
 
@@ -123,14 +94,6 @@ Fraction operator/(const Fraction &left, const Fraction &right) {
     temp.simplify();
     return temp;
 }
-
-//Fraction Fraction::dividedBy(const Fraction &frac) const {
-//    Fraction temp;
-//
-//    temp = Fraction((numerator * frac.denominator), (denominator * frac.numerator));
-//    temp.simplify();
-//    return temp;
-//}
 
 
 
@@ -175,10 +138,6 @@ bool operator>=(const Fraction &left, const Fraction &right) {
 bool operator==(const Fraction &left, const Fraction &right) {
     return ((left.numerator * right.denominator) == (left.denominator * right.numerator));
 }
-
-//bool Fraction::isEqualTo(const Fraction &frac) const {
-//    return ((numerator * frac.denominator) == (denominator * frac.numerator));
-//}
 
 
 
@@ -281,16 +240,11 @@ Fraction Fraction::operator--(int) {
 
 
 istream &operator>>(istream &in, Fraction &right) {
-    // TO CODE
     int temp, whole = 0, num = 0, den = 1;
     bool frac = false;
-    
-//    cout << "test" << endl;
-    
+        
     do {
         in >> temp;
-//        cout << temp << endl;
-//        if (in.peek() == '+') {
 
         if ((in.peek() == '+') || ((in.peek() == '\n') && !(frac))) {
             whole = temp;
@@ -304,8 +258,7 @@ istream &operator>>(istream &in, Fraction &right) {
         } else {
             den = temp;
         }
-//        cout << whole << '+' << num << '/' << den << endl;
-//        in.ignore();
+
     } while (in.peek() != '\n');
 
     if (whole < 0) {
@@ -314,7 +267,6 @@ istream &operator>>(istream &in, Fraction &right) {
         right.numerator = (whole * den) + num;
     }
     right.denominator = den;
-//    cout << right.numerator << "/" << right.denominator << endl;
     right.simplify();
     return in;
 }
@@ -323,10 +275,6 @@ istream &operator>>(istream &in, Fraction &right) {
 
 
 
-
-//void Fraction::print() const {
-//    cout << numerator << "/" << denominator;
-//}
 
 ostream &operator<<(ostream &out, const Fraction &right) {
     if (right.denominator == 1) {

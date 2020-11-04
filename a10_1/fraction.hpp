@@ -19,8 +19,6 @@
 #define fraction_hpp
 
 #include <iostream>
-//#include <string>
-//#include <stdio.h>
 
 namespace cs_fraction {
 
@@ -126,21 +124,15 @@ class Fraction
 public:
     Fraction(int inNum = 0, int inDenom = 1);
     friend Fraction operator+(const Fraction &left, const Fraction &right);
-//    Fraction addedTo(const Fraction &frac) const;
     friend Fraction operator-(const Fraction &left, const Fraction &right);
-//    Fraction subtract(const Fraction &frac) const;
     friend Fraction operator*(const Fraction &left, const Fraction &right);
-//    Fraction multipliedBy(const Fraction &frac) const;
     friend Fraction operator/(const Fraction &left, const Fraction &right);
-//    Fraction dividedBy(const Fraction &frac) const;
     friend bool operator<(const Fraction &left, const Fraction &right);
     friend bool operator<=(const Fraction &left, const Fraction &right);
     friend bool operator>(const Fraction &left, const Fraction &right);
     friend bool operator>=(const Fraction &left, const Fraction &right);
     friend bool operator==(const Fraction &left, const Fraction &right);
-//    bool isEqualTo(const Fraction &frac) const;
     friend bool operator!=(const Fraction &left, const Fraction &right);
-//    void print() const;
     Fraction operator+=(const Fraction &right);
     Fraction operator-=(const Fraction &right);
     Fraction operator*=(const Fraction &right);
