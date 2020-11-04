@@ -101,7 +101,8 @@ namespace cs_fraction {
 
 
     bool operator<(const Fraction &left, const Fraction &right) {
-        return ((left.numerator * right.denominator) < (left.denominator * right.numerator));
+        return ((left.numerator * right.denominator) < (left.denominator *
+                                                        right.numerator));
     }
 
 
@@ -110,7 +111,8 @@ namespace cs_fraction {
 
 
     bool operator<=(const Fraction &left, const Fraction &right) {
-        return ((left.numerator * right.denominator) <= (left.denominator * right.numerator));
+        return ((left.numerator * right.denominator) <= (left.denominator *
+                                                         right.numerator));
     }
 
 
@@ -119,7 +121,8 @@ namespace cs_fraction {
 
 
     bool operator>(const Fraction &left, const Fraction &right) {
-        return ((left.numerator * right.denominator) > (left.denominator * right.numerator));
+        return ((left.numerator * right.denominator) > (left.denominator *
+                                                        right.numerator));
     }
 
 
@@ -127,7 +130,8 @@ namespace cs_fraction {
 
 
     bool operator>=(const Fraction &left, const Fraction &right) {
-        return ((left.numerator * right.denominator) >= (left.denominator * right.numerator));
+        return ((left.numerator * right.denominator) >= (left.denominator *
+                                                         right.numerator));
     }
 
 
@@ -136,7 +140,8 @@ namespace cs_fraction {
 
 
     bool operator==(const Fraction &left, const Fraction &right) {
-        return ((left.numerator * right.denominator) == (left.denominator * right.numerator));
+        return ((left.numerator * right.denominator) == (left.denominator *
+                                                         right.numerator));
     }
 
 
@@ -145,7 +150,8 @@ namespace cs_fraction {
 
 
     bool operator!=(const Fraction &left, const Fraction &right) {
-        return ((left.numerator * right.denominator) != (left.denominator * right.numerator));
+        return ((left.numerator * right.denominator) != (left.denominator *
+                                                         right.numerator));
     }
 
 
@@ -194,7 +200,6 @@ namespace cs_fraction {
 
 
     Fraction Fraction::operator++() {
-    //    *this = *this + 1;
         *this += 1;
         return *this;
     }
@@ -206,7 +211,6 @@ namespace cs_fraction {
 
     Fraction Fraction::operator++(int) {
         Fraction temp(*this);
-    //    *this = *this + 1;
         *this += 1;
         return temp;
     }
@@ -217,7 +221,6 @@ namespace cs_fraction {
 
 
     Fraction Fraction::operator--() {
-    //    *this = *this - 1;
         *this -= 1;
         return *this;
     }
@@ -229,7 +232,6 @@ namespace cs_fraction {
 
     Fraction Fraction::operator--(int) {
         Fraction temp(*this);
-    //    *this = *this - 1;
         *this -= 1;
         return temp;
     }
