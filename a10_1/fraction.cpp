@@ -339,5 +339,4 @@ namespace cs_fraction {
             numerator *= -1;
         }
     }
-
 }
